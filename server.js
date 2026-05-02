@@ -6,9 +6,13 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/assignment1";
-
 app.use(cors({
-  origin: "https://advance-mood-jouneral1.vercel.app"
+  origin: [
+    "https://advance-mood-jouneral1-lx7x86ui3-dhruvs-projects-b153a187.vercel.app",
+    "https://advance-mood-jouneral1.vercel.app",
+    "http://localhost:3000"
+  ],
+  credentials: true
 }));
 app.use(express.json({ limit: "1mb" }));
 
