@@ -1,147 +1,77 @@
-# 🚀 AI Emotion & Sentiment Analysis Engine
+# 🧠 AI Emotion Analyzer (Mood Journal App)
 
-A production-grade Emotion & Sentiment Analysis system built using Node.js, MongoDB, and advanced NLP techniques.
+A full-stack AI-powered emotion analysis platform that detects user emotions from text using a hybrid NLP + AI system, with real-time analysis, explainability, and persistent storage.
 
----
-
-## 🔥 Features
-
-* 🧠 Emotion Detection (happy, sad, angry, anxious, calm, etc.)
-* 📊 Confidence & Intensity scoring
-* 🧩 Multi-emotion detection (primary + secondary)
-* 🧾 Explainability (evidence tracking)
-* 📈 Emotion timeline (sentence-level analysis)
-* 🌐 Hinglish language support
-* ⚡ Optimized performance (O(W) complexity)
-* 💾 MongoDB storage with analytics
-* 🔁 Batch processing with concurrency control
+🔗 Live Demo: https://advance-mood-jouneral1.vercel.app/
 
 ---
 
-## 🏗️ Tech Stack
+## 🚀 Overview
 
-* Node.js
-* Express.js
-* MongoDB (Atlas)
-* Mongoose
-* Axios
-* Custom NLP Engine
+This project combines **rule-based NLP, statistical modeling, and AI APIs** to analyze emotional state from user input.
+
+It is designed as a **production-ready system**, not just a basic sentiment tool.
 
 ---
 
-## ⚙️ Installation
+## ✨ Key Features
 
-```bash
-git clone https://github.com/your-username/emotion-analyzer.git
-cd emotion-analyzer
-npm install
-```
+### 🧠 Emotion Intelligence
+- Detects **Top 2 emotions**
+- Softmax-based confidence scoring
+- Emotion intensity (0–1 scale)
+- Multi-emotion handling
+
+### 📊 Sentiment Analysis
+- Score range: **-1 (negative) → +1 (positive)**
+- Context-aware polarity detection
+
+### 🌍 Advanced NLP Support
+- Hinglish normalization (Hindi → English mapping)
+- Sarcasm detection ("yeah right", "just perfect")
+- Negation handling ("not happy" → sad)
+- Repeated character normalization ("soooo")
+
+### ⚡ Performance Optimizations
+- O(W) keyword scanning using reverse index
+- TTL + LRU cache system
+- Batch processing with concurrency control
+
+### 🧩 Explainable AI
+- Evidence tracking (why emotion was detected)
+- Keyword extraction
+- Sentence-wise emotion timeline
+
+### 💾 Backend & Storage
+- MongoDB Atlas for storing user data/history
+- REST API architecture
+- Deployed on Vercel
 
 ---
 
-## 🔑 Environment Setup
+## 🛠 Tech Stack
 
-Create a `.env` file:
+### Frontend
+- React / Next.js
+- Tailwind CSS
 
-```env
-MONGO_URI=your_mongodb_connection_string
-OPENAI_API_KEY=your_api_key (optional)
-```
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- MongoDB Atlas
+
+### AI & NLP
+- Custom heuristic engine
+- OpenAI API (fallback + enhancement)
 
 ---
 
-## ▶️ Run the server
+## 📦 API Example
 
-```bash
-node server.js
-```
-
----
-
-## 📡 API Endpoints
-
-### 1. Analyze Text
-
-```http
-POST /analyze
-```
-
-**Body:**
-
+### Request
 ```json
 {
-  "text": "I feel stressed and nothing is going right"
+  "text": "I feel very stressed and overwhelmed"
 }
-```
-
----
-
-### 2. Get History
-
-```http
-GET /history
-```
-
----
-
-### 3. Filter by Emotion
-
-```http
-GET /history/:emotion
-```
-
----
-
-### 4. Emotion Stats
-
-```http
-GET /stats
-```
-
----
-
-## 📊 Example Response
-
-```json
-{
-  "emotion": "anxious",
-  "confidence": 0.82,
-  "intensity": 0.74,
-  "keywords": ["stressed", "nothing", "wrong"],
-  "summary": "User feels overwhelmed and stressed"
-}
-```
-
----
-
-## 🧠 How It Works
-
-* Preprocessing (contractions, Hinglish normalization)
-* Phrase-level pattern detection
-* Keyword-based scoring with reverse indexing
-* Context-aware negation handling
-* Softmax probability distribution
-* Sentiment fallback system
-* Optional OpenAI enhancement
-
----
-
-## 🚀 Future Improvements
-
-* Embedding-based semantic analysis
-* Sarcasm detection upgrade
-* Real-time dashboard
-* User authentication system
-* Mobile / Chrome extension
-
----
-
-## 📌 Author
-
-Dhruv Pandey
-
----
-
-## ⭐ Show your support
-
-If you like this project, give it a star ⭐ on GitHub!
